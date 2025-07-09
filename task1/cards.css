@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+img{
+  height: 20px;
+  width:20px;
+}
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+    
+}
+.card {
+  border: thin solid black;
+  border-radius: 5px;
+  height: auto;
+  margin: 2em;
+  height: 500px;
+  width: 400px;
+  perspective: 1500px;
+}
+.content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+}
+.more {
+  display: none;
+}
+.more:checked ~ .content {
+  transform: rotateY(180deg);
+}
+.button {
+  grid-row: -1;
+  grid-column: 1/-1;
+  justify-self: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 1.5em;
+  height: 3em;
+  line-height: 2.9em;
+  min-width: 3em;
+  background-color: transparent;
+  border: solid 2px gold;
+  color: gold;
+  border-radius: 4px;
+  text-align: center;
+  backface-visibility: hidden;
+  transition: 0.3s ease-in-out;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.front  {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center center;
+}
+.front, .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 6px;
+}
+
+.front::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.one::after {
+  background: linear-gradient(80deg, rgba(197, 203, 214, 0.7), rgba(85, 190, 157, 0.587))
+}
+
+.two::after {
+  background: linear-gradient(80deg, rgba(197, 203, 214, 0.7), rgba(106, 40, 164, 0.587))
+}
+.three::after {
+  background: linear-gradient(80deg, rgba(197, 203, 214, 0.7), rgba(219, 73, 44, 0.797))
+}
+.one span {
+  background-image: linear-gradient(to right, aquamarine, lightblue);
+}
+.two span {
+  background-image: linear-gradient(to right, purple, violet);
+}
+.three span {
+  background-image: linear-gradient(to right, orange, red);
+}
+.inner h2 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+.one h2 {
+  color: aquamarine;
+}
+.two h2 {
+  color: purple;
+}
+.three h2 {
+  color: red;
+}
+h2 + span {
+  padding: 0.25em 0.75em;
+  border: 2px solid;
+  border-radius: 999px;
+  font-size: 0.85em;
+  font-weight: bold;
+  text-shadow: 0 0 3px #000;
+}
+.front .inner {
+  display: grid;
+  justify-items: center;
+  padding: 1.5em;
+  transform: translateZ(80px) scale(0.9);
+  grid-template-rows: 3fr 1fr 1fr 2fr 1fr;
+  justify-items: center;
+}
+.back {
+  transform: rotateY(180deg);
+  background-color: rgb(136, 130, 212);
+  border: 2px solid rgb(240, 240, 240);
+}
+.back .inner{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  gap: 0.75em;
+  padding: 1em;
+  transform: translateZ(80px) scale(0.9);
+    
+}
+.info {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  position: relative;
+  grid-column: 1;
+    
+}
+.info:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  background-color: #ccc;
+}
+.info span {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.element span{
+  font-size: 0.8em;
+  font-weight: 200;
+  text-align: left;
+  padding-left: 1em;
+  display: block;
+  min-width: 100px;
+            
+    
+}
+.description {
+  border-top: 1px solid black; /* or any color you want */
+  margin-top: 1em;
+  font-size: 1em;
+  border-radius: 5px;
+  font-weight: 600;
+  line-height: 1.4em;
+  overflow: auto;
+  color: var(--accent-color);
+  padding-right: 10px;
+  max-height: 200px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: gold;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
