@@ -132,10 +132,10 @@ h2 + span {
 .front .inner {
   display: grid;
   justify-items: center;
+  text-align: center;
   padding: 1.5em;
   transform: translateZ(80px) scale(0.9);
   grid-template-rows: 3fr 1fr 1fr 2fr 1fr;
-  justify-items: center;
 }
 .back {
   transform: rotateY(180deg);
@@ -155,7 +155,6 @@ h2 + span {
   display: grid;
   align-items: center;
   grid-template-columns: 150px 1fr;
-  align-items: center;
   position: relative;
   grid-column: 1;
     
