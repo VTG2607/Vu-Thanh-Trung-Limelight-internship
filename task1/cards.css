@@ -1,3 +1,11 @@
+:root {
+    --accent-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -5,6 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
 }
 
 img{
@@ -17,7 +26,7 @@ img{
   justify-content: center;
   gap: 2rem;
   width: 100%;
-    
+  
 }
 .card {
   margin: 2em;
@@ -139,7 +148,7 @@ h2 + span {
 }
 .back {
   transform: rotateY(180deg);
-  background-color: rgb(136, 130, 212);
+  background-color: rgb(204, 39, 204);
   border: 2px solid rgb(240, 240, 240);
 }
 .back .inner{
